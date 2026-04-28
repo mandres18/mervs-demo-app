@@ -13,16 +13,16 @@ spec:
         app: mervs-demo-app
     spec:
       containers:
-- name: app
-  image: harbor.vstcloud.io/library/mervs-demo-app:v1
-  ports:
-  - containerPort: 3000
-  securityContext:
-    runAsUser: 1000
-    runAsNonRoot: true
-    allowPrivilegeEscalation: false
-    capabilities:
-      drop:
-      - ALL
-    seccompProfile:
-      type: RuntimeDefault
+      - name: app
+        image: harbor.vstcloud.io/library/mervs-demo-app:v1
+        ports:
+        - containerPort: 3000
+        securityContext:
+          runAsUser: 1000
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          seccompProfile:
+            type: RuntimeDefault

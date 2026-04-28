@@ -17,7 +17,7 @@ spec:
       - name: harbor-secret
       containers:
       - name: mervs-demo-app
-        image: harbor.vstcloud.io/library/mervs-demo-app:v2
+        image: image: harbor.vstcloud.io/library/mervs-demo-app:v3
         ports:
         - containerPort: 3000
         securityContext:

@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-harbor
+        app: mervs-demo-app
     spec:
       imagePullSecrets:
       - name: harbor-secret

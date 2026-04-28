@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mervs-demo-app-harbor-svc
-  namespace: default
+  name: mervs-demo-app
 spec:
-  type: LoadBalancer
   selector:
     app: mervs-demo-app
   ports:
-    - port: 3000
-      targetPort: 8080
+  - port: 80
+    targetPort: 3000
+  type: ClusterIP

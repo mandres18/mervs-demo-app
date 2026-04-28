@@ -16,7 +16,7 @@ spec:
       imagePullSecrets:
       - name: harbor-secret
       containers:
-      - name: nginx
+      - name: mervs-demo-app
         image: harbor.vstcloud.io/library/mervs-demo-app:v1
         ports:
         - containerPort: 3000

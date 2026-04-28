@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mervs-demo-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mervs-demo-app

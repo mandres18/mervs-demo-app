@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mervs-demo-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mervs-demo-app
+  template:
+    metadata:
+      labels:
+        app: nginx-harbor
+    spec:
+      imagePullSecrets:
+      - name: harbor-secret
+      containers:
+      - name: nginx
+        image: harbor.vstcloud.io/library/mervs-demo-app:v1
+        ports:
+        - containerPort: 3000
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
